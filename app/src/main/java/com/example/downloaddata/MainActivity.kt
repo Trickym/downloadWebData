@@ -46,11 +46,11 @@ class MainActivity : AppCompatActivity() {
         var url = urlInput.text.toString()
         val request = DownloadManager.Request(Uri.parse(url))
         request.setAllowedNetworkTypes(DownloadManager.Request.NETWORK_WIFI or DownloadManager.Request.NETWORK_MOBILE)
-        request.setTitle("Download")
+        request.setTitle("webData")
         request.setDescription("The file is downloading...")
-        request.allowScanningByMediaScanner()
-        request.setNotificationVisibility(DownloadManager.Request.VISIBILITY_VISIBLE_NOTIFY_COMPLETED)
-        request.setDestinationInExternalPublicDir(Environment.DIRECTORY_DOWNLOADS,  "${System.currentTimeMillis()}")
+//        request.allowScanningByMediaScanner()
+        request.setNotificationVisibility(DownloadManager.Request.VISIBILITY_VISIBLE_NOTIFY_COMPLETED       )
+//        request.setDestinationInExternalPublicDir(Environment.DIRECTORY_DOWNLOADS,  q)
         val manager = getSystemService(Context.DOWNLOAD_SERVICE) as DownloadManager
         manager.enqueue(request)
     }
